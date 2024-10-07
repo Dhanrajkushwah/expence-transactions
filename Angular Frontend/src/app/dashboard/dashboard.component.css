@@ -21,7 +21,7 @@
 /* Styles for transaction details */
 .transaction-date {
     color: #4caf50; /* Green for date */
-    font-weight: bold;
+    font-weight: 400px;
 }
 
 .transaction-description {
@@ -30,7 +30,7 @@
 
 .transaction-amount {
     color: #f44336; /* Red for amount */
-    font-weight: bold;
+    font-weight: 400px;
 }
 
 .dashboard-header {
