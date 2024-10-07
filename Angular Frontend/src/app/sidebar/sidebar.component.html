@@ -1,0 +1,12 @@
+<div class="sidebar" [ngClass]="{'active': sidebarActive}">
+    <div class="toggle-btn" (click)="toggleSidebar()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul>
+      <li><a routerLink="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li><a routerLink="/view-transactions"><i class="fas fa-list"></i> View Transactions</a></li>
+      <li><a routerLink="/incomes"><i class="fas fa-dollar-sign"></i> Incomes</a></li>
+      <li><a routerLink="/expenses"><i class="fas fa-exclamation-circle"></i> Expenses</a></li>
+    </ul>
+  </div>
+  

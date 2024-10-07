@@ -1,0 +1,148 @@
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f8fa;
+  padding: 0 20px;
+}
+
+.col-sm-6 {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.fa-google {
+    background: conic-gradient(from -45deg, #ea4335 110deg, #d8dadc 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+.headline-large {
+  font-size: 60px;
+  font-weight: bold;
+  margin: 20px 0;
+  text-align: left;
+  color: #f5f8fa !important;
+}
+
+
+.headline-small {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 20px 0;
+  text-align: left;
+  color: #f5f8fa !important;
+}
+
+
+mat-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+ mat-form-field {
+    width: 100%;
+    margin-bottom: 0px;
+  }
+
+button {
+  width: 100%;
+  font-size: 16px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  background-color: #1a91da !important;
+}
+
+
+.apple-button {
+  background-color: white !important; 
+  color: black;
+  margin-bottom: 10px;
+  border:  1px #333;
+}
+
+.apple-button i {
+  margin-right: 10px;
+}
+
+
+.sign-in-button {
+  background-color: black !important;
+  color: white !important;
+  border: 0 solid black;
+}
+
+
+button:hover {
+  background-color: #1a91da;
+}
+
+.apple-button:hover {
+  background-color: #333; 
+}
+
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .col-sm-6 {
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .svg-container {
+    max-width: 90%;
+  }
+
+  .headline-large {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .headline-small {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  mat-card {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  .headline-large {
+    font-size: 40px;
+    text-align: center;
+  }
+
+  .headline-small {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  mat-card {
+    width: 100%;
+    margin: 0 10px;
+  }
+
+  .svg-container {
+    max-width: 80%;
+  }
+}

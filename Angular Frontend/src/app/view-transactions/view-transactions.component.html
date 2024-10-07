@@ -1,0 +1,15 @@
+<div class="transaction-container">
+    <div class="transaction-list">
+      <div class="card mt-2 mb-2 p-2"><h3>Transaction List</h3></div>
+      <div *ngFor="let transaction of transactions" class="transaction-item">
+        <div class="transaction-details">
+          <i class="fas fa-coins"></i>
+          <p>{{ transaction.type }}: {{ transaction.amount }} - {{ transaction.category }}</p>
+        </div>
+        <button (click)="deleteTransaction(transaction._id)" class="btn delete-btn">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+  

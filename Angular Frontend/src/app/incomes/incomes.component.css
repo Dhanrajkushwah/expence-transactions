@@ -1,0 +1,203 @@
+
+.income-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin: 20px;
+    padding: 20px;
+    max-width:100%;
+    margin: 0 auto;
+}
+
+
+.income-form {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.income-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.income-form h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+
+.income-form input,
+.income-form textarea,
+.income-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+
+.income-form input:focus,
+.income-form textarea:focus,
+.income-form select:focus {
+    border-color: #007bff;
+}
+
+
+.income-form .btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.income-form .btn:hover {
+    background-color: #0056b3;
+}
+
+
+.income-card {
+    background-color: white;
+    width: 100%;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+
+.income-item p i {
+    margin-right: 5px;
+    color: #007bff;
+}
+
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+
+.income-list {
+    flex: 2;
+    padding: 20px;
+    border-radius: 10px;
+    animation: slideIn 0.5s ease;
+}
+
+
+.income-list h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.income-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+
+.income-item:hover {
+    transform: translateY(-2px);
+}
+
+
+.income-item p {
+    margin: 0;
+    flex-grow: 1;
+}
+
+.income-item .delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.income-item .delete-btn:hover {
+    background-color: #c82333;
+}
+
+
+@media screen and (max-width: 768px) {
+    .income-container {
+        flex-direction: column;
+    }
+
+    .income-form,
+    .income-list {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .income-form input,
+    .income-form textarea {
+        font-size: 14px;
+    }
+
+    .income-form .btn,
+    .income-item .delete-btn {
+        font-size: 14px;
+    }
+
+    .income-list h3,
+    .income-form h2 {
+        font-size: 20px;
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

@@ -1,0 +1,42 @@
+<div class="login-container"> 
+  <form [formGroup]="signinForm">
+    <mat-card>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput autocomplete="off" type="email"  id="email" formControlName="email" name="email" [ngClass]="{'is-invalid': signinForm.controls['email'].errors && ckDep }"
+        placeholder="Enter your email"/>
+      </mat-form-field>
+      <small *ngIf="signinForm.controls['email'].errors && ckDep" class="text-danger">Enter Your Email</small>
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput  autocomplete="off" [type]="showPassword ? 'text' : 'password'"
+        id="password"
+        formControlName="password"
+        name="password"
+        [ngClass]="{ 'is-invalid': signinForm.controls['password'].errors && ckDep }"
+          placeholder="Enter your password"/>
+          <i
+          class="fa"
+          [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"
+          (click)="togglePasswordVisibility()"
+          style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); cursor: pointer;"
+        ></i>
+      </mat-form-field>
+      <small
+      *ngIf="signinForm.controls['password'].errors && ckDep"
+      class="text-danger"
+      >Enter Your Password</small>
+       
+      <button mat-raised-button class="apple-button">
+        <i class="fa-brands fa-apple" style="font-size: 25px;"></i> Sign up with Apple
+      </button>
+
+      <button mat-raised-button color="light" routerLink="/signup"> <i class="fab fa-google"></i>&nbsp; Create account</button>
+      <span>By signing up, you agree to the <a href="">Terms of Service</a> and <a href="">Privacy Policy</a>, including <a href="">Cookie Use.</a></span>
+
+      <h2 style="margin-top: 10px;">Already have an account?</h2>
+      <button mat-raised-button class="sign-in-button" (click)="login()">Sign in</button>
+    </mat-card>
+    </form>
+  </div>
+  

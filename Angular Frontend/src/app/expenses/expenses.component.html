@@ -1,0 +1,82 @@
+<div class="expense-container">
+    <div class="expense-card">
+      <h2><i class="fas fa-money-check-alt"></i> Expenses</h2>
+      <p><strong>Total Expenses: </strong><span>{{ totalExpense }}</span></p>
+    </div>
+  </div>
+  
+  <div class="expense-container">
+    <div class="expense-form">
+      <form (ngSubmit)="addExpense()" #expenseForm="ngForm">
+        <input
+          [(ngModel)]="title"
+          name="title"
+          placeholder="Expense Title"
+          required
+        />
+        <div *ngIf="expenseForm.submitted && !title" class="error">Title is required.</div>
+  
+        <input
+          [(ngModel)]="amount"
+          name="amount"
+          placeholder="Expense Amount"
+          type="number"
+          required
+          min="0"
+        />
+        <div *ngIf="expenseForm.submitted && (!amount || amount < 0)" class="error">Amount must be a positive number.</div>
+  
+        <input
+          [(ngModel)]="date"
+          name="date"
+          placeholder="Date"
+          type="date"
+          required
+        />
+        <div *ngIf="expenseForm.submitted && !date" class="error">Date is required.</div>
+  
+        <select [(ngModel)]="category" name="category" required>
+          <option value="" disabled selected>Select Category</option>
+          <option value="Education">Education</option>
+          <option value="Groceries">Groceries</option>
+          <option value="Health">Health</option>
+          <option value="Subscription">Subscription</option>
+          <option value="Takeaways">Takeaways</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Traveling">Traveling</option>
+          <option value="Others">Others</option>
+        </select>
+        <div *ngIf="expenseForm.submitted && !category" class="error">Category is required.</div>
+  
+        <textarea
+          [(ngModel)]="description"
+          name="description"
+          placeholder="Description"
+        ></textarea>
+  
+        <input
+          [(ngModel)]="references"
+          name="references"
+          placeholder="Add a Reference"
+        />
+  
+        <button type="submit" class="btn" [disabled]="expenseForm.invalid">Add Expense</button>
+      </form>
+    </div>
+  
+    <div class="expense-list expence-item">
+      <h3>Expense List</h3>
+      <div *ngFor="let expense of expenses" class="expense-item ">
+        <p>
+          <i class="fas fa-money-bill-wave"></i> Title: {{ expense.title }} |
+          <i class="fas fa-dollar-sign"></i> Amount: {{ expense.amount }} |
+          <i class="fas fa-calendar-alt"></i> Date: {{ expense.date | date }} |
+          <i class="fas fa-tag"></i> Category: {{ expense.category }}
+        </p>
+        <button (click)="deleteExpense(expense._id)" class="btn delete-btn" title="Delete">
+            <i class="fas fa-trash"></i> 
+          </button>
+      </div>
+    </div>
+  </div>
+  

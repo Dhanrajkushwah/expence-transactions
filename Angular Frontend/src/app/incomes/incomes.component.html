@@ -1,0 +1,92 @@
+<div class="income-container">
+    <div class="income-card">
+        <h2><i class="fas fa-money-check-alt"></i> Incomes</h2>
+        <p><strong>Total Income: </strong><span>{{ totalIncome }}</span></p>
+      </div></div>
+<div class="income-container">
+    <div class="income-form">
+      <h2>Incomes</h2>
+      <form (ngSubmit)="addIncome()" #incomeForm="ngForm" novalidate>
+        <input
+          [(ngModel)]="salaryTitle"
+          name="salaryTitle"
+          placeholder="Income Title"
+          required
+        />
+        <div *ngIf="incomeForm.controls['salaryTitle']?.invalid && incomeForm.controls['salaryTitle']?.touched" class="error-message">
+            Salary Title is required.
+        </div>
+  
+        <input
+          [(ngModel)]="amount"
+          name="amount"
+          placeholder="Income Amount"
+          type="number"
+          required
+        />
+        <div *ngIf="incomeForm.controls['amount']?.invalid && incomeForm.controls['amount']?.touched" class="error-message">
+            Amount is required.
+        </div>
+  
+        <input
+          [(ngModel)]="date"
+          name="date"
+          placeholder="Enter aDate"
+          type="date"
+          required
+        />
+        <div *ngIf="incomeForm.controls['date']?.invalid && incomeForm.controls['date']?.touched" class="error-message">
+            Date is required.
+        </div>
+  
+        <select
+          [(ngModel)]="category"
+          name="category"
+          required
+        >
+          <option value="" disabled selected>Select Category</option>
+          <option value="salary">Salary</option>
+          <option value="freelancing">Freelancing</option>
+          <option value="investment">Investment</option>
+          <option value="stock">Stock</option>
+          <option value="bitcoins">Bitcoins</option>
+          <option value="bank_transfer">Bank Transfer</option>
+          <option value="youtube">YouTube</option>
+          <option value="others">Others</option>
+        </select>
+        <div *ngIf="incomeForm.controls['category']?.invalid && incomeForm.controls['category']?.touched" class="error-message">
+            Category is required.
+        </div>
+  
+        <textarea
+          [(ngModel)]="description"
+          name="description"
+          placeholder="Description"
+        ></textarea>
+  
+        <input
+          [(ngModel)]="references"
+          name="references"
+          placeholder="Add a References"
+        />
+  
+        <button type="submit" class="btn" [disabled]="incomeForm.invalid">Add Income</button>
+      </form>
+    </div>
+  
+    <div class="income-list">
+        <h3>Income List</h3>
+        <div *ngFor="let income of incomes" class="income-item">
+          <p>
+            <i class="fas fa-money-bill-wave"></i> Title: {{ income.title }} |
+            <i class="fas fa-dollar-sign"></i> Amount: {{ income.amount }} |
+            <i class="fas fa-calendar-alt"></i> Date: {{ income.date | date }} |
+            <i class="fas fa-tags"></i> Category: {{ income.category }}
+          </p>
+          <button (click)="deleteIncome(income._id)" class="btn delete-btn" title="Delete">
+            <i class="fas fa-trash"></i> 
+          </button>
+        </div>
+      </div>
+  </div>
+  
