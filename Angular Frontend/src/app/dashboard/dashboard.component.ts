@@ -28,7 +28,7 @@ export class DashboardComponent {
   debugger
   this.expenseService.getTransactions().subscribe(
     (transactions: any[]) => {
-      console.log("Fetched Transactions:", transactions); // Log the entire transactions array
+      console.log("Fetched Transactions:", transactions); 
 
       this.transactions = transactions;
       this.totalIncome = 0;
@@ -49,14 +49,14 @@ export class DashboardComponent {
       });
 
       this.netBalance = this.totalIncome - this.totalExpense;
-      this.recentTransactions = transactions.slice(-5); // Get last 5 transactions
+      this.recentTransactions = transactions.slice(-5); 
       
-      console.log("Recent Transactions:", this.recentTransactions); // Log recent transactions
+      console.log("Recent Transactions:", this.recentTransactions); 
 
       this.updateChart(transactionDates, transactionAmounts);
     },
     error => {
-      console.error("Error fetching transactions:", error); // Log any errors
+      console.error("Error fetching transactions:", error); 
     }
   );
 }

@@ -29,14 +29,15 @@
       <ul *ngIf="recentTransactions.length > 0; else noRecentHistory">
         <li *ngFor="let recent of recentTransactions">
           <i class="fas fa-clock"></i> &nbsp; 
-          <span>{{ recent.date | date }}</span> - 
-          <span>{{ recent.description }}</span> - 
-          <span>${{ recent.amount }}</span>
+          <span class="transaction-date">{{ recent.date | date }}</span> - 
+          <span class="transaction-description">{{ recent.description }}</span> - 
+          <span class="transaction-amount">${{ recent.amount }}</span>
         </li>
       </ul>
       <ng-template #noRecentHistory>
         <p>No recent transactions available.</p>
       </ng-template>
     </div>
+    
   </div>
 </div>
