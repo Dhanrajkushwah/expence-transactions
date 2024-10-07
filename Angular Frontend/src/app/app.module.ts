@@ -27,6 +27,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { IncomesComponent } from './incomes/incomes.component';
 import { ExpensesComponent } from './expenses/expenses.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
 
@@ -39,7 +40,7 @@ import { LineChartComponent } from './line-chart/line-chart.component';
         IncomesComponent,
         ExpensesComponent,
         LineChartComponent,
-        
+        DashboardComponent,
     ],
     bootstrap: [AppComponent], imports: [BrowserModule,
         AppRoutingModule,

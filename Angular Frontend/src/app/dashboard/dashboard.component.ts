@@ -25,6 +25,7 @@ export class DashboardComponent {
   }
 
  private loadTransactions(): void {
+  debugger
   this.expenseService.getTransactions().subscribe(
     (transactions: any[]) => {
       console.log("Fetched Transactions:", transactions); // Log the entire transactions array
